@@ -1,6 +1,6 @@
 // Minimal GA4 wrapper. Replace GA_MEASUREMENT_ID with the real ID from
 // Google Analytics before deploying (Admin > Data Streams > Web).
-export const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+export const GA_MEASUREMENT_ID = "G-0WJBVL7Q0Y";
 
 export function initAnalytics() {
   if (typeof window === "undefined" || GA_MEASUREMENT_ID.includes("XXXX")) return;
