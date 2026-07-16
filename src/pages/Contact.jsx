@@ -3,7 +3,7 @@ import SEO from "../components/SEO";
 
 // Replace with the real Formspree endpoint before launch:
 // https://formspree.io/f/YOUR_FORM_ID  (grab this from the Formspree dashboard)
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xlgqgpap";
 
 export default function Contact() {
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
@@ -34,7 +34,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact"
-        description="Get in touch with The Ad-Toolkit Team — feedback, bug reports, and feature requests for adsgear.net."
+        description="Get in touch with The AdsGear Team — feedback, bug reports, and feature requests for adsgear.net."
         path="/contact"
       />
       <div className="max-w-lg mx-auto px-4 sm:px-6 py-10 sm:py-14">
