@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://adsgear.net/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://adsgear.net/utm-builder</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://adsgear.net/utm-decoder</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://adsgear.net/ad-spec-checker</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://adsgear.net/roas-calculator</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://adsgear.net/about</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://adsgear.net/contact</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://adsgear.net/faq</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://adsgear.net/privacy</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://adsgear.net/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://adsgear.net/blog/what-is-utm-tracking</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://adsgear.net/blog/how-to-calculate-roas</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://adsgear.net/blog/meta-ads-specs-2026</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://adsgear.net/blog/google-ads-utm-parameters-best-practices</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://adsgear.net/blog/what-is-a-good-ctr</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://adsgear.net/blog/cpm-vs-cpc-vs-cpa</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://adsgear.net/blog/utm-naming-convention-for-teams</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://adsgear.net/blog/break-even-roas-explained</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+</urlset>

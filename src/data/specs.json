@@ -1,0 +1,269 @@
+{
+  "meta": {
+    "label": "Meta",
+    "formats": {
+      "feed_image": {
+        "label": "Feed image",
+        "specs": {
+          "Width": "1080px",
+          "Height": "1080px",
+          "Aspect ratio": "1:1",
+          "Max file size": "30720 KB",
+          "File types": "JPG, PNG",
+          "Recommended text": "Under 20% of image"
+        },
+        "checks": [
+          { "key": "width", "label": "Width", "required": 1080, "unit": "px" },
+          { "key": "height", "label": "Height", "required": 1080, "unit": "px" },
+          { "key": "fileSize", "label": "File size", "required": 30720, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["jpg", "jpeg", "png"], "unit": "" }
+        ],
+        "notes": "Meta recommends square 1:1 for feed placements, but the same asset can be reused in 4:5 for Stories with cropping."
+      },
+      "stories": {
+        "label": "Stories",
+        "specs": {
+          "Width": "1080px",
+          "Height": "1920px",
+          "Aspect ratio": "9:16",
+          "Max file size": "30720 KB",
+          "File types": "JPG, PNG, MP4",
+          "Safe zone": "14% top/bottom for text"
+        },
+        "checks": [
+          { "key": "width", "label": "Width", "required": 1080, "unit": "px" },
+          { "key": "height", "label": "Height", "required": 1920, "unit": "px" },
+          { "key": "fileSize", "label": "File size", "required": 30720, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["jpg", "jpeg", "png", "mp4"], "unit": "" }
+        ],
+        "notes": "Keep key text and logos inside the 14% safe margin — Meta overlays profile info near the top and bottom."
+      },
+      "video_feed": {
+        "label": "Video feed",
+        "specs": {
+          "Width": "1280px",
+          "Height": "720px",
+          "Aspect ratio": "16:9 or 1:1",
+          "Max file size": "4 GB",
+          "File types": "MP4, MOV",
+          "Max length": "241 minutes"
+        },
+        "checks": [
+          { "key": "width", "label": "Width", "required": 1280, "unit": "px" },
+          { "key": "height", "label": "Height", "required": 720, "unit": "px" },
+          { "key": "fileSize", "label": "File size", "required": 4194304, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["mp4", "mov"], "unit": "" }
+        ],
+        "notes": "Square (1:1) video tends to outperform landscape in mobile feed placements."
+      }
+    }
+  },
+  "google": {
+    "label": "Google",
+    "formats": {
+      "responsive_display": {
+        "label": "Responsive display",
+        "specs": {
+          "Landscape image": "1200x628px",
+          "Square image": "1200x1200px",
+          "Logo": "1200x1200px or 1200x300px",
+          "Max file size": "5120 KB",
+          "File types": "JPG, PNG, GIF (static)"
+        },
+        "checks": [
+          { "key": "width", "label": "Width", "required": 1200, "unit": "px" },
+          { "key": "height", "label": "Height", "required": 628, "unit": "px" },
+          { "key": "fileSize", "label": "File size", "required": 5120, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["jpg", "jpeg", "png", "gif"], "unit": "" }
+        ],
+        "notes": "Upload multiple aspect ratios (1.91:1, 1:1, 4:5) — Google auto-selects the best fit per placement."
+      },
+      "search_rsa": {
+        "label": "Search (RSA)",
+        "specs": {
+          "Headlines": "Up to 15, 30 characters each",
+          "Descriptions": "Up to 4, 90 characters each",
+          "Display path": "2 fields, 15 characters each",
+          "File types": "Text only, no creative asset"
+        },
+        "checks": [
+          { "key": "fileSize", "label": "File size", "required": 0, "unit": "KB", "type": "max", "note": "Text ad — no file to check" }
+        ],
+        "notes": "Provide at least 3 unique headlines and 2 descriptions for the algorithm to have meaningful combinations to test."
+      },
+      "youtube_instream": {
+        "label": "YouTube in-stream",
+        "specs": {
+          "Aspect ratio": "16:9",
+          "Resolution": "1920x1080px min",
+          "Max file size": "256 GB",
+          "File types": "MP4",
+          "Skippable length": "12 seconds to 6 minutes"
+        },
+        "checks": [
+          { "key": "width", "label": "Width", "required": 1920, "unit": "px" },
+          { "key": "height", "label": "Height", "required": 1080, "unit": "px" },
+          { "key": "fileSize", "label": "File size", "required": 268435456, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["mp4"], "unit": "" }
+        ],
+        "notes": "Front-load your message — many viewers skip after the 5-second mark."
+      }
+    }
+  },
+  "linkedin": {
+    "label": "LinkedIn",
+    "formats": {
+      "single_image": {
+        "label": "Single image",
+        "specs": {
+          "Width": "1200px",
+          "Height": "627px",
+          "Aspect ratio": "1.91:1",
+          "Max file size": "5120 KB",
+          "File types": "JPG, PNG"
+        },
+        "checks": [
+          { "key": "width", "label": "Width", "required": 1200, "unit": "px" },
+          { "key": "height", "label": "Height", "required": 627, "unit": "px" },
+          { "key": "fileSize", "label": "File size", "required": 5120, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["jpg", "jpeg", "png"], "unit": "" }
+        ],
+        "notes": "Square (1:1) crops tend to perform better in mobile feed than the 1.91:1 landscape master."
+      },
+      "video": {
+        "label": "Video",
+        "specs": {
+          "Aspect ratio": "1:2.4 to 2.4:1",
+          "Max file size": "200 MB",
+          "File types": "MP4",
+          "Max length": "30 minutes"
+        },
+        "checks": [
+          { "key": "fileSize", "label": "File size", "required": 204800, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["mp4"], "unit": "" }
+        ],
+        "notes": "Keep the first 5 seconds compelling without sound — most LinkedIn video plays muted."
+      },
+      "document": {
+        "label": "Document ad",
+        "specs": {
+          "File types": "PDF, PPT, DOC",
+          "Max file size": "100 MB",
+          "Max pages": "300"
+        },
+        "checks": [
+          { "key": "fileSize", "label": "File size", "required": 102400, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["pdf", "ppt", "pptx", "doc", "docx"], "unit": "" }
+        ],
+        "notes": "Front-load your strongest slide or page — LinkedIn shows a preview before the click to expand."
+      }
+    }
+  },
+  "youtube": {
+    "label": "YouTube",
+    "formats": {
+      "skippable_instream": {
+        "label": "Skippable in-stream",
+        "specs": {
+          "Aspect ratio": "16:9 or 9:16",
+          "Resolution": "1920x1080px min",
+          "Max file size": "256 GB",
+          "File types": "MP4"
+        },
+        "checks": [
+          { "key": "width", "label": "Width", "required": 1920, "unit": "px" },
+          { "key": "height", "label": "Height", "required": 1080, "unit": "px" },
+          { "key": "fileSize", "label": "File size", "required": 268435456, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["mp4"], "unit": "" }
+        ],
+        "notes": "Both landscape and vertical versions of the same creative help it serve well across placements."
+      },
+      "shorts": {
+        "label": "Shorts",
+        "specs": {
+          "Aspect ratio": "9:16",
+          "Resolution": "1080x1920px",
+          "Max file size": "256 GB",
+          "File types": "MP4",
+          "Max length": "60 seconds"
+        },
+        "checks": [
+          { "key": "width", "label": "Width", "required": 1080, "unit": "px" },
+          { "key": "height", "label": "Height", "required": 1920, "unit": "px" },
+          { "key": "fileSize", "label": "File size", "required": 268435456, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["mp4"], "unit": "" }
+        ],
+        "notes": "Keep the subject centered — Shorts thumbnails and UI overlays crop the edges of the frame."
+      },
+      "bumper": {
+        "label": "Bumper",
+        "specs": {
+          "Aspect ratio": "16:9",
+          "Resolution": "1920x1080px min",
+          "Max file size": "256 GB",
+          "File types": "MP4",
+          "Max length": "6 seconds"
+        },
+        "checks": [
+          { "key": "width", "label": "Width", "required": 1920, "unit": "px" },
+          { "key": "height", "label": "Height", "required": 1080, "unit": "px" },
+          { "key": "fileSize", "label": "File size", "required": 268435456, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["mp4"], "unit": "" }
+        ],
+        "notes": "Bumpers are non-skippable — lead with the brand or offer since there is no time to build up to it."
+      }
+    }
+  },
+  "dv360": {
+    "label": "DV360",
+    "formats": {
+      "standard_display": {
+        "label": "Standard display",
+        "specs": {
+          "Common sizes": "300x250, 728x90, 160x600, 320x50",
+          "Max file size": "150 KB (initial)",
+          "File types": "JPG, PNG, GIF, HTML5"
+        },
+        "checks": [
+          { "key": "width", "label": "Width", "required": 300, "unit": "px" },
+          { "key": "height", "label": "Height", "required": 250, "unit": "px" },
+          { "key": "fileSize", "label": "File size", "required": 150, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["jpg", "jpeg", "png", "gif", "html5"], "unit": "" }
+        ],
+        "notes": "Build to the initial 150 KB load weight even for HTML5 — polite load can add up to 2.2 MB after user interaction."
+      },
+      "native": {
+        "label": "Native display",
+        "specs": {
+          "Main image": "1200x627px min",
+          "Logo": "128x128px min",
+          "Max file size": "5120 KB",
+          "File types": "JPG, PNG"
+        },
+        "checks": [
+          { "key": "width", "label": "Width", "required": 1200, "unit": "px" },
+          { "key": "height", "label": "Height", "required": 627, "unit": "px" },
+          { "key": "fileSize", "label": "File size", "required": 5120, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["jpg", "jpeg", "png"], "unit": "" }
+        ],
+        "notes": "Native ads inherit the look of the publisher page — keep imagery editorial rather than salesy."
+      },
+      "video": {
+        "label": "Video (in-stream)",
+        "specs": {
+          "Aspect ratio": "16:9",
+          "Resolution": "1920x1080px min",
+          "Max file size": "1 GB",
+          "File types": "MP4"
+        },
+        "checks": [
+          { "key": "width", "label": "Width", "required": 1920, "unit": "px" },
+          { "key": "height", "label": "Height", "required": 1080, "unit": "px" },
+          { "key": "fileSize", "label": "File size", "required": 1048576, "unit": "KB", "type": "max" },
+          { "key": "fileType", "label": "File type", "required": ["mp4"], "unit": "" }
+        ],
+        "notes": "DV360 video specs mirror Google Ads YouTube specs closely — one master file usually covers both."
+      }
+    }
+  }
+}
