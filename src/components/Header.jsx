@@ -5,6 +5,7 @@ import { Zap, Menu, X } from "lucide-react";
 const NAV_LINKS = [
   { to: "/utm-builder", label: "UTM Builder" },
   { to: "/utm-decoder", label: "UTM Decoder" },
+  { to: "/bulk-utm-generator", label: "Bulk Generator" },
   { to: "/ad-spec-checker", label: "Spec Checker" },
   { to: "/roas-calculator", label: "ROAS Calc" },
 ];
@@ -21,7 +22,7 @@ export default function Header() {
               <Zap size={18} className="text-white" fill="white" />
             </span>
             <span className="font-semibold text-lg tracking-tight">
-              AdGear
+              AdsGear
               <span className="font-mono text-slate-400 font-normal">.net</span>
             </span>
           </Link>

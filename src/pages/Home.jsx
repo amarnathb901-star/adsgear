@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Link2, ScanSearch, ClipboardCheck, Calculator, ArrowRight } from "lucide-react";
+import { Link2, ScanSearch, ListPlus, ClipboardCheck, Calculator, ArrowRight } from "lucide-react";
 import SEO from "../components/SEO";
 
 const TOOLS = [
@@ -18,6 +18,14 @@ const TOOLS = [
     name: "UTM Decoder",
     desc: "Paste any tagged URL and instantly see every parameter, decoded.",
     tags: ["No sign-up", "Free"],
+  },
+  {
+    to: "/bulk-utm-generator",
+    icon: ListPlus,
+    color: "bg-orange-600",
+    name: "Bulk UTM Generator",
+    desc: "Tag dozens of URLs at once — paste a list or upload a CSV, with built-in linting.",
+    tags: ["CSV export", "Free"],
   },
   {
     to: "/ad-spec-checker",

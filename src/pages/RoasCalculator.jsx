@@ -3,6 +3,25 @@ import { TrendingUp, TrendingDown, Minus } from "lucide-react";
 import SEO from "../components/SEO";
 import NumberField from "../components/NumberField";
 import { computeMetrics, METRIC_FORMULAS, ROAS_BENCHMARKS, forecastFromImpressions, forecastFromBudget } from "../utils/metrics";
+import { useQuerySync, isNumericString, readQueryParams } from "../utils/useQuerySync";
+
+const INPUT_KEYS = ["spend", "revenue", "clicks", "conversions", "impressions", "margin"];
+
+function loadInitialMode() {
+  const query = readQueryParams();
+  const mode = query.get("mode");
+  return mode === "cpc" || mode === "cpm" ? mode : "cpc";
+}
+
+function loadInitialInputs() {
+  const query = readQueryParams();
+  const inputs = { spend: "", revenue: "", clicks: "", conversions: "", impressions: "", margin: "" };
+  INPUT_KEYS.forEach((key) => {
+    const value = query.get(key);
+    if (value !== null && isNumericString(value)) inputs[key] = value;
+  });
+  return inputs;
+}
 
 const METRIC_CARDS = [
   { key: "roas", label: "ROAS", suffix: "x", highlight: true },
@@ -19,17 +38,12 @@ function fmt(val, { prefix = "", suffix = "" } = {}) {
 }
 
 export default function RoasCalculator() {
-  const [mode, setMode] = useState("cpc");
-  const [inputs, setInputs] = useState({
-    spend: "",
-    revenue: "",
-    clicks: "",
-    conversions: "",
-    impressions: "",
-    margin: "",
-  });
+  const [mode, setMode] = useState(loadInitialMode);
+  const [inputs, setInputs] = useState(loadInitialInputs);
   const [forecastTab, setForecastTab] = useState("toBudget");
   const [forecastInputs, setForecastInputs] = useState({ impressions: "", budget: "", cpm: "" });
+
+  useQuerySync({ mode, ...inputs });
 
   function update(key, value) {
     setInputs((s) => ({ ...s, [key]: value }));

@@ -2,26 +2,50 @@ import { useState, useEffect, useMemo } from "react";
 import { Link2, Trash2, Clock, ChevronDown, ChevronUp } from "lucide-react";
 import SEO from "../components/SEO";
 import CopyButton from "../components/CopyButton";
+import FieldWarnings from "../components/FieldWarnings";
 import {
   buildUtmUrl,
   paramLabel,
+  ALL_PARAMS,
   SOURCE_PRESETS,
   MEDIUM_PRESETS,
   getHistory,
   pushHistory,
   clearHistory,
 } from "../utils/utm";
+import { lintUtmValue, getParamHistory, addParamHistoryValue } from "../utils/utmLint";
+import { useQuerySync, isValidUrlLike, readQueryParams } from "../utils/useQuerySync";
+
+// Maps shareable query param names to internal state keys
+const QUERY_PARAM_MAP = {
+  url: "baseUrl",
+  source: "utm_source",
+  medium: "utm_medium",
+  campaign: "utm_campaign",
+  term: "utm_term",
+  content: "utm_content",
+};
 
 const STORAGE_KEY = "adsgear_utm_builder_state";
 
 function loadInitial() {
+  let state = { baseUrl: "", utm_source: "", utm_medium: "", utm_campaign: "", utm_content: "", utm_term: "" };
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) state = { ...state, ...JSON.parse(raw) };
   } catch {
     /* noop */
   }
-  return { baseUrl: "", utm_source: "", utm_medium: "", utm_campaign: "", utm_content: "", utm_term: "" };
+
+  const query = readQueryParams();
+  Object.entries(QUERY_PARAM_MAP).forEach(([param, key]) => {
+    const value = query.get(param);
+    if (value === null || !value.trim()) return;
+    if (key === "baseUrl" && !isValidUrlLike(value)) return;
+    state = { ...state, [key]: value };
+  });
+
+  return state;
 }
 
 export default function UtmBuilder() {
@@ -29,6 +53,13 @@ export default function UtmBuilder() {
   const [generated, setGenerated] = useState(null);
   const [history, setHistory] = useState(getHistory);
   const [historyOpen, setHistoryOpen] = useState(true);
+  const [paramHistory, setParamHistory] = useState(() => {
+    const h = {};
+    ALL_PARAMS.forEach((k) => {
+      h[k] = getParamHistory(k);
+    });
+    return h;
+  });
 
   useEffect(() => {
     try {
@@ -38,10 +69,31 @@ export default function UtmBuilder() {
     }
   }, [state]);
 
+  useQuerySync({
+    url: state.baseUrl,
+    source: state.utm_source,
+    medium: state.utm_medium,
+    campaign: state.utm_campaign,
+    term: state.utm_term,
+    content: state.utm_content,
+  });
+
   const live = useMemo(() => buildUtmUrl(state.baseUrl, state), [state]);
+
+  const warnings = useMemo(() => {
+    const w = {};
+    ALL_PARAMS.forEach((k) => {
+      w[k] = lintUtmValue(k, state[k], paramHistory[k]);
+    });
+    return w;
+  }, [state, paramHistory]);
 
   function update(key, value) {
     setState((s) => ({ ...s, [key]: value }));
+  }
+
+  function applyFix(w) {
+    update(w.param, w.fix(state[w.param]));
   }
 
   function handleGenerate() {
@@ -49,6 +101,12 @@ export default function UtmBuilder() {
     setGenerated(result);
     if (result.url) {
       setHistory(pushHistory(result.url));
+      ALL_PARAMS.forEach((key) => addParamHistoryValue(key, state[key]));
+      const h = {};
+      ALL_PARAMS.forEach((k) => {
+        h[k] = getParamHistory(k);
+      });
+      setParamHistory(h);
     }
   }
 
@@ -156,6 +214,7 @@ export default function UtmBuilder() {
                 {generated?.missing.includes("utm_source") && (
                   <p className="text-xs text-red-500 mt-1">Source is required</p>
                 )}
+                <FieldWarnings warnings={warnings.utm_source} onFix={applyFix} />
                 <div className="flex flex-wrap gap-1.5 mt-2">
                   {SOURCE_PRESETS.map((p) => (
                     <button
@@ -188,6 +247,7 @@ export default function UtmBuilder() {
                 {generated?.missing.includes("utm_medium") && (
                   <p className="text-xs text-red-500 mt-1">Medium is required</p>
                 )}
+                <FieldWarnings warnings={warnings.utm_medium} onFix={applyFix} />
                 <div className="flex flex-wrap gap-1.5 mt-2">
                   {MEDIUM_PRESETS.map((p) => (
                     <button
@@ -211,6 +271,7 @@ export default function UtmBuilder() {
                   placeholder="spring-launch-2026"
                   className="w-full rounded-lg border border-slate-200 py-2.5 px-3 text-sm focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none"
                 />
+                <FieldWarnings warnings={warnings.utm_campaign} onFix={applyFix} />
               </label>
 
               <label className="block">
@@ -222,6 +283,7 @@ export default function UtmBuilder() {
                   placeholder="carousel-ad-1"
                   className="w-full rounded-lg border border-slate-200 py-2.5 px-3 text-sm focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none"
                 />
+                <FieldWarnings warnings={warnings.utm_content} onFix={applyFix} />
               </label>
 
               <label className="block sm:col-span-2">
@@ -233,6 +295,7 @@ export default function UtmBuilder() {
                   placeholder="running-shoes"
                   className="w-full sm:w-1/2 rounded-lg border border-slate-200 py-2.5 px-3 text-sm focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none"
                 />
+                <FieldWarnings warnings={warnings.utm_term} onFix={applyFix} />
               </label>
             </div>
 

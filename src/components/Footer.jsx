@@ -4,6 +4,7 @@ import { Zap } from "lucide-react";
 const TOOL_LINKS = [
   { to: "/utm-builder", label: "UTM Builder" },
   { to: "/utm-decoder", label: "UTM Decoder" },
+  { to: "/bulk-utm-generator", label: "Bulk Generator" },
   { to: "/ad-spec-checker", label: "Spec Checker" },
   { to: "/roas-calculator", label: "ROAS Calculator" },
 ];
@@ -29,7 +30,7 @@ export default function Footer() {
                 <Zap size={14} className="text-white" fill="white" />
               </span>
               <span className="font-semibold">
-                AdGear<span className="font-mono text-slate-400 font-normal">.net</span>
+                AdsGear<span className="font-mono text-slate-400 font-normal">.net</span>
               </span>
             </Link>
             <p className="text-sm text-slate-500 mt-3">free tools for performance marketers</p>

@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import UtmBuilder from "./pages/UtmBuilder";
 import UtmDecoder from "./pages/UtmDecoder";
+import BulkUtmGenerator from "./pages/BulkUtmGenerator";
 import SpecChecker from "./pages/SpecChecker";
 import RoasCalculator from "./pages/RoasCalculator";
 import About from "./pages/About";
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/utm-builder" element={<UtmBuilder />} />
         <Route path="/utm-decoder" element={<UtmDecoder />} />
+        <Route path="/bulk-utm-generator" element={<BulkUtmGenerator />} />
         <Route path="/ad-spec-checker" element={<SpecChecker />} />
         <Route path="/roas-calculator" element={<RoasCalculator />} />
         <Route path="/about" element={<About />} />
