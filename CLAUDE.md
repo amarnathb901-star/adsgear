@@ -1,4 +1,4 @@
-# adsgear.net — Project Context
+# AdsGear — Project Context
 
 ## Stack
 - React 18 + Vite + Tailwind CSS

@@ -1,4 +1,4 @@
-# adsgear.net
+# AdsGear
 
 Free multi-tool site for performance marketers — UTM Builder, UTM Decoder, Ad Spec Checker, and ROAS Calculator. Pure frontend SPA, no backend, all logic runs in the browser.
 

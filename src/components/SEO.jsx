@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
 export default function SEO({ title, description, path = "", jsonLd }) {
-  const fullTitle = title ? `${title} — adsgear.net` : "adsgear.net — Free tools for performance marketers";
+  const fullTitle = title ? `${title} — AdsGear` : "AdsGear — Free tools for performance marketers";
   const url = `https://adsgear.net${path}`;
 
   return (

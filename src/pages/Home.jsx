@@ -54,7 +54,7 @@ export default function Home() {
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "WebApplication",
-          name: "adsgear.net",
+          name: "AdsGear",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,7 +63,7 @@ export default function Home() {
       />
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-14 text-center">
-        <p className="font-mono text-xs text-brand-600 tracking-wide mb-4">adsgear.net</p>
+        <p className="font-mono text-xs text-brand-600 tracking-wide mb-4">AdsGear</p>
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 max-w-3xl mx-auto">
           Free tools for <span className="text-brand-600">performance marketers</span>
         </h1>

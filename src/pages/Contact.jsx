@@ -34,7 +34,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact"
-        description="Get in touch with The AdsGear Team — feedback, bug reports, and feature requests for adsgear.net."
+        description="Get in touch with The AdsGear Team — feedback, bug reports, and feature requests for AdsGear."
         path="/contact"
       />
       <div className="max-w-lg mx-auto px-4 sm:px-6 py-10 sm:py-14">

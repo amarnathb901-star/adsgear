@@ -4,7 +4,7 @@ import SEO from "../components/SEO";
 
 const FAQS = [
   {
-    q: "Is adsgear.net really free?",
+    q: "Is AdsGear really free?",
     a: "Yes. All four tools — UTM Builder, UTM Decoder, Ad Spec Checker, and ROAS Calculator — are free with no account, no login, and no usage limits.",
   },
   {
@@ -29,7 +29,7 @@ const FAQS = [
   },
   {
     q: "Do I need to create an account?",
-    a: "No account is required for any tool on adsgear.net.",
+    a: "No account is required for any tool on AdsGear.",
   },
   {
     q: "How often are the ad spec requirements updated?",
@@ -44,7 +44,7 @@ export default function FAQ() {
     <>
       <SEO
         title="FAQ"
-        description="Frequently asked questions about adsgear.net's free UTM builder, UTM decoder, ad spec checker, and ROAS calculator."
+        description="Frequently asked questions about AdsGear's free UTM builder, UTM decoder, ad spec checker, and ROAS calculator."
         path="/faq"
         jsonLd={{
           "@context": "https://schema.org",

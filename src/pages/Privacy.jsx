@@ -5,7 +5,7 @@ export default function Privacy() {
     <>
       <SEO
         title="Privacy Policy"
-        description="adsgear.net privacy policy — what data we collect, what we don't, and how our free tools work entirely in your browser."
+        description="AdsGear privacy policy — what data we collect, what we don't, and how our free tools work entirely in your browser."
         path="/privacy"
       />
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
@@ -16,7 +16,7 @@ export default function Privacy() {
           <section>
             <h2 className="text-base font-semibold text-slate-800 mb-2">What this site does</h2>
             <p>
-              adsgear.net provides free browser-based tools for marketers: a UTM builder, UTM decoder, ad
+              AdsGear provides free browser-based tools for marketers: a UTM builder, UTM decoder, ad
               spec checker, and campaign metrics calculator. All calculations happen locally in your browser.
               We do not require an account and do not store the URLs, campaign names, or numbers you enter
               on any server.

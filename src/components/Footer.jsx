@@ -30,7 +30,7 @@ export default function Footer() {
                 <Zap size={14} className="text-white" fill="white" />
               </span>
               <span className="font-semibold">
-                AdsGear<span className="font-mono text-slate-400 font-normal">.net</span>
+                AdsGear
               </span>
             </Link>
             <p className="text-sm text-slate-500 mt-3">free tools for performance marketers</p>
