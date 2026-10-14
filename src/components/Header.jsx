@@ -23,7 +23,6 @@ export default function Header() {
             </span>
             <span className="font-semibold text-lg tracking-tight">
               AdsGear
-              <span className="font-mono text-slate-400 font-normal">.net</span>
             </span>
           </Link>
 
